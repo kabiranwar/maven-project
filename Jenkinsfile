@@ -13,7 +13,12 @@ pipeline {
             steps{
                 //bat 'mvn clean package'
                 //bat "docker build . -t tomcatwebapp:${env.BUILD_ID}"
-                bat "echo ${my_tag}"
+                sh 'mvn clean package'
+				post{
+				success{
+				}echo 'Now Archieving ...'
+				archieveArtifacts artifacts: '**/target/*.war'
+				}
             }
 
         }
