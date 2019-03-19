@@ -17,11 +17,11 @@ pipeline {
 				}
 				post{
 				success{
-				}echo 'Now Archieving ...'
+				echo 'Now Archieving ...'
 				archieveArtifacts artifacts: '**/target/*.war'
 				}
             }
 
         }
     }
-}
+	}
