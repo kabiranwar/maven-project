@@ -1,11 +1,7 @@
 pipeline {
     agent any
 
-    environment{
-        //my_tag = "c:\\temp"
-        //my_tag = my_tag
-    }
-     
+    
     
 
     stages{
@@ -18,7 +14,7 @@ pipeline {
 				post{
 				success{
 				echo 'Now Archieving ...'
-				archieveArtifacts artifacts: '**/target/*.war'
+				archiveArtifacts artifacts: '**/target/*.war'
 				}
             }
 
